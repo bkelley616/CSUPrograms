@@ -1,0 +1,105 @@
+Microsoft (R) Macro Assembler Version 14.22.27905.0	    10/02/19 17:45:53
+CIS335Assignment2Question2.asm				     Page 1 - 1
+
+
+				.386				;InstuctionInstruction list. Default is .8086
+
+				.model flat,stdcall
+					;.MODEL i=is an assembler directive that specifies memory model of your program.
+					;Under Win32, there's only on model, FLAT model. Where data segment and code segment share the same 4GB segment
+					;STDCALL tells MASM about parameter passing convention. For Windows API, we use stdcall
+
+				.stack 4096						;Reserve 4096-Byte stack
+				ExitProcess PROTO dwExitCode:dword
+					; FunctionName PROTO [ParameterName]: DataType, [ParameterName]: DataType, ...
+
+
+
+					; set each month to a constant integer
+ = 00000001				January = 1
+ = 00000002				February = 2
+ = 00000003				March = 3
+ = 00000004				April = 4
+ = 00000005				May = 5
+ = 00000006				June = 6
+ = 00000007				July = 7
+ = 00000008				August = 8
+ = 00000009				September = 9
+ = 0000000A				October = 10
+ = 0000000B				November = 11
+ = 0000000C				December = 12
+
+
+
+ 00000000			.data				;reserve storage for data
+					;data segment
+
+					;use the symbolic constants to intialize the month array
+ 00000000 01 02 03 04 05		monthArray BYTE January, February, March, April, May, June, July, August, September, October, November, December 
+	   06 07 08 09 0A
+	   0B 0C
+					
+
+ 00000000			.code
+ 00000000			main proc
+
+				;No code required other than terminating the program properly
+
+				invoke ExitProcess,0	;INVOKE expression [, arguments]
+ 00000000  6A 00	   *	    push   +000000000h
+ 00000002  E8 00000000 E   *	    call   ExitProcess
+ 00000007			main endp				;proc and endp is like bracket.
+				end main
+Microsoft (R) Macro Assembler Version 14.22.27905.0	    10/02/19 17:45:53
+CIS335Assignment2Question2.asm				     Symbols 2 - 1
+
+
+
+
+Segments and Groups:
+
+                N a m e                 Size     Length   Align   Combine Class
+
+FLAT . . . . . . . . . . . . . .	GROUP
+STACK  . . . . . . . . . . . . .	32 Bit	 00001000 DWord	  Stack	  'STACK'	 
+_DATA  . . . . . . . . . . . . .	32 Bit	 0000000C DWord	  Public  'DATA'	
+_TEXT  . . . . . . . . . . . . .	32 Bit	 00000007 DWord	  Public  'CODE'	
+
+
+Procedures, parameters, and locals:
+
+                N a m e                 Type     Value    Attr
+
+ExitProcess  . . . . . . . . . .	P Near	 00000000 FLAT	Length= 00000000 External STDCALL
+main . . . . . . . . . . . . . .	P Near	 00000000 _TEXT	Length= 00000007 Public STDCALL
+
+
+Symbols:
+
+                N a m e                 Type     Value    Attr
+
+@CodeSize  . . . . . . . . . . .	Number	 00000000h   
+@DataSize  . . . . . . . . . . .	Number	 00000000h   
+@Interface . . . . . . . . . . .	Number	 00000003h   
+@Model . . . . . . . . . . . . .	Number	 00000007h   
+@code  . . . . . . . . . . . . .	Text   	 _TEXT
+@data  . . . . . . . . . . . . .	Text   	 FLAT
+@fardata?  . . . . . . . . . . .	Text   	 FLAT
+@fardata . . . . . . . . . . . .	Text   	 FLAT
+@stack . . . . . . . . . . . . .	Text   	 FLAT
+April  . . . . . . . . . . . . .	Number	 00000004h   
+August . . . . . . . . . . . . .	Number	 00000008h   
+December . . . . . . . . . . . .	Number	 0000000Ch   
+February . . . . . . . . . . . .	Number	 00000002h   
+January  . . . . . . . . . . . .	Number	 00000001h   
+July . . . . . . . . . . . . . .	Number	 00000007h   
+June . . . . . . . . . . . . . .	Number	 00000006h   
+March  . . . . . . . . . . . . .	Number	 00000003h   
+May  . . . . . . . . . . . . . .	Number	 00000005h   
+November . . . . . . . . . . . .	Number	 0000000Bh   
+October  . . . . . . . . . . . .	Number	 0000000Ah   
+September  . . . . . . . . . . .	Number	 00000009h   
+monthArray . . . . . . . . . . .	Byte	 00000000 _DATA	
+
+	   0 Warnings
+	   0 Errors

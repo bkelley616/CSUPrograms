@@ -1,0 +1,80 @@
+<html>
+<head>
+<title>Answers</title>
+
+</head>
+<body>
+
+  <pre> <p>
+
+  1. Create a procedure that generates a random string of length L, containing all capital letters. When calling the
+     procedure, pass the value of L in EAX, and pass a pointer to an array of byte that will hold the random string.
+     Write a test program that calls your procedure 20 times and displays the strings in the console window.
+
+     <font color = red>Answer:
+     </font>
+       <a href="../A5Q1.asm"> Program (Link)</a>
+
+
+
+
+  2. Revise the encryption program that you have worked on last Friday in the following manner:
+
+        • Create an encryption key consisting of multiple characters.
+
+        • Use this key to encrypt and decrypt the plaintext by XORing each character of
+          the key against a corresponding byte in the message.
+
+        • Repeat the key as many times as necessary until all plain text bytes are translated.
+
+        • Suppose, for example, the key was equal to “ABXmv#7”. This is how the key would align
+          with the plain text bytes:
+
+
+      <font color = red>Answer:
+      </font>
+        <a href="../A5Q2.asm"> Program (Link)</a>
+
+
+
+
+  3.  Create a procedure named CalcGrade that receives an integer value between 0 and 100 and returns a single
+      capital letter in the AL register. Preserve all other register values between calls to the procedure. The
+      letter returned by the procedure should be according to the following ranges:
+
+      Write a test program that generates 10 random integers between 50 and 100, inclusive. Each time an integer is
+      generated, pass it to the CalcGrade procedure. You can test your program using a debugger, or if you prefer to
+      use the book’s library, you can display each integer and its corresponding letter grade. (The Irvine32 library
+      is required for this solution program because it uses the RandomRange procedure).
+
+
+      <font color = red>Answer:
+      </font>
+        <a href="../A5Q3.asm"> Program (Link)</a>
+
+
+
+
+  4. Banks use a Personal Identification Number (PIN) to uniquely identify each customer. Let us assume that our
+     bank has a specified range of acceptable values for each digit in its customers’ 5-digit PINs. The table
+     shown below contains the acceptable ranges, where digits are numbered from left to right in the PIN.
+     Then we can see that the PIN 52413 is valid. But the PIN 43534 is invalid because the first digit is out of range.
+
+     Your task is to create a procedure named Validate_PIN that receives a pointer to an array of byte containing
+     a 5-igit PIN. Declare two arrays to hold the minimum and maximum range values and use these arrays to validate
+     each digit of the PIN that was passed to the procedure. If any digit is found to be outside its valid range,
+     immediately return the digit’s position (between 1 and 5) in the EAX register.
+     If the entire PIN is valid, return 0 in EAX. Preserve all other register values between calls to the procedure.
+     Write a test program that calls Validate_PIN at least four times, using both valid and invalid byte arrays.
+     By running the program in a debugger, display "Valid" or "Invalid" on the console after each procedure call.
+
+
+     <font color = red>Answer:
+     </font>
+       <a href="../A5Q4.asm"> Program (Link)</a>
+
+
+
+  </p></a>
+</body>
+</html>

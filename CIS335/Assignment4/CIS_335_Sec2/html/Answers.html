@@ -1,0 +1,207 @@
+<html>
+<head>
+<title>Answers</title>
+
+</head>
+<body>
+
+  <pre> <p>
+
+  <b>*Note* used code excerpts for #1 & #2 due to them not specifcally asking for a program nor defining the data.</b>
+
+
+
+  1. Implement the following pseudocode in assembly language. Use short-circuit evaluation and assume
+     that X is a 32-bit variable.
+
+        If ( ebx > ecx AND ebx > edx) OR ( edx > eax )
+              X = 1
+        else
+              X = 2
+
+          <font color = red>Answer: (Assembly program code)
+
+                ; X is 32 bit, use 32 bit registers, start
+
+                cmp ebx,ecx       ; do first comparison, ebx > ecx
+                jna condition2    ; jump not above. This is the short circuit. wont continue AND statement if False
+                cmp ebx,edx       ; second comparison in AND statement if above is true. ebx > edx
+                jna condition2    ; jump not above. go to next statement after OR if this one is false
+                jmp option1       ; evaluates to true, x = 1
+
+                condition2:       ; OR condition
+                  cmp edx, eax
+                  jna option2     ; x = 2
+
+                option1:          ; x = 1 if option
+                  mov X, 1        ; set X = 1
+                  jmp end         ; jump to the end of if statement
+
+                option2:          ; x = 2 else option
+                  mov X, 2        ; set X = 2
+                  jmp end         ; jump to the end of if statement
+
+                end:              ; end code statement
+
+
+          </font>
+
+
+
+  2. Implement the following pseudocode in assembly language. Use short-circuit evaluation and assume
+     that A, B, and N are 32-bit signed integers.
+
+        while N > 0
+        if N != 3 AND (N < A OR N > B)
+            N = N – 2
+        else
+            N = N – 1
+        end while
+
+
+
+
+        <font color = red>Answer: (Assembly program code)
+
+              ; A, B, N are 32 bit, use 32 bit registers, start
+              ; move variables to registers to be able use comparisons, assuming data is already defined
+
+              mov eax, A
+              mov ebx, B
+              mov edx, N
+
+              ;begin while loop
+              whileCondition:
+                  cmp edx,0           ; while loop condition N > 0
+                  jle end             ; jump if less or equal, exit loop
+
+                    ;begin if statement
+                    cmp edx,3
+                    je option2         ; jump if equal, else n != 3 so continue to next conditonal statement
+                    cmp edx,eax        ; check if N < A, if true short circuit to option1
+                    jl option1         ; jump if less, true so short circuit to option 1 (if condition is true)
+                    cmp edx,ebx        ; false so do N > B
+                    jg option1         ; jump if greater, true so jump to option 1 (if condition is true)
+                    jmp option2        ; jump to else statement, (if condition is false)
+
+                    option1:            ; if option, N = N - 2
+                      sub edx, 2
+                      jmp whileCondition
+
+                    option2:            ; else option, N = N - 1
+                      sub edx, 1
+                      jmp whileCondition
+
+              end:                      ; mov registers back to variables to update the values
+              mov A, eax
+              mov B, ebx
+              mov N, edx
+
+
+
+
+
+        </font>
+
+
+
+  3. Which statement is true about what will happen when the example code runs?
+
+                  1: main PROC
+                  2:  push 10
+                  3:  push 20
+                  4:  call Ex2Sub
+                  5:  pop eax
+                  6:  INVOKE ExitProcess,0
+                  7: main ENDP
+                  8:
+                  9: Ex2Sub PROC
+                  10:  pop eax
+                  11:  ret
+                  12: Ex2Sub ENDP
+
+            a) EAX will equal 10 on line 6
+            b) The program will halt with a runtime error on Line 10
+            c) EAX will equal 20 on line 6
+            d) The program will halt with a runtime error on Line 11
+
+        <font color = red>Answer:
+
+          d) The program will halt with a runtime error on Line 11
+
+          </font>
+
+
+  4. Which statement is true about what will happen when the example code runs?
+
+                  1: main PROC
+                  2:  mov eax,40
+                  3:  push offset Here
+                  4:  jmp  Ex4Sub
+                  5:    Here:
+                  6:  mov eax,30
+                  7:  INVOKE ExitProcess,0
+                  8: main ENDP
+                  9:
+                  10: Ex4Sub PROC
+                  11:  ret
+                  12: Ex4Sub ENDP
+
+            a) EAX will equal 30 on line 7
+            b) The program will halt with a runtime error on Line 4
+            c) EAX will equal 30 on line 6
+            d) The program will halt with a runtime error on Line 11
+
+
+
+        <font color = red>Answer:
+
+          c) EAX will equal 30 on line 6
+
+        </font>
+
+
+  5. Write a sequence of statements using indexed addressing that copies an element in a doubleword
+     array to the previous position in the same array.
+
+
+        <font color = red>Answer:
+
+            ;start with an array, can be any array not this one specifcally
+
+            myArray doubleword 10,20,30,40
+
+            mov indexOfElement, 2 ; note that it starts at 0
+
+            ; mov index of element into esi
+
+            mov eax, indexOfElement
+
+            ; start sequence
+            mov ebx, eax                          ; set edi to element index
+            dec ebx                               ; decrease edi by 1
+            mov ecx, doubleWordArray[eax*4]       ; mov first element to eax
+            mov doubleWordArray[ebx*4],ecx        ; mov element to previous position
+
+            ; value will be 10, 30, 30, 40
+
+        </font>
+
+
+  6.Create a procedure that ﬁlls an array of doublewords with N random integers, making sure the values
+    fall within the range j...k, inclusive. When calling the procedure, pass a pointer to the array that will
+    hold the data, pass N, and pass the values of j and k. Preserve all register values between calls to the
+    procedure. Write a test program that calls the procedure twice, using different values for j and k.
+    Verify your results using a debugger
+
+
+
+        <font color = red>Answer:
+        </font>
+          <a href="../A4Q6.asm"> Program (Link)</a>
+
+
+
+  </p></a>
+</body>
+</html>

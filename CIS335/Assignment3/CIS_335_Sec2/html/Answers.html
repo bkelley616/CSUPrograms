@@ -1,0 +1,171 @@
+<html>
+<head>
+<title>Answers</title>
+
+</head>
+<body>
+
+  <pre> <p>
+  1. In the following code, the value in AL is intended to be a signed byte. Explain how the Overflow flag helps, or
+     does not help you, to determine whether the final value in AL falls within a valid signed range.
+
+            mov al,-1
+            add al,130
+
+        <font color = red>Answer:
+
+            A signed byte (8-bits) has a range of -128 to 127. The instructions above perform the expression
+            -1 + 130  this evaluates to = 129. Since this value is outside of the range, the overflow flag
+            is therfore set. This allows you to determine that the final Value in AL is outside the valid range.
+        </font>
+
+
+  2. Where indicated, write down the values of the Carry, Sign, Zero, and Overflow flags after each
+  instruction has executed:
+
+        mov ax,7FF0h
+        add al,10h  ; a. CF =  SF =  ZF =  OF =
+        add ah,1  ; b. CF =  SF =  ZF =  OF =
+        add ax,2  ; c. CF =  SF =  ZF =  OF =
+
+
+
+        <font color = red>Answer:
+
+            a. CF = 1     SF = 0     ZF = 1     OF = 0
+
+            b. CF = 0     SF = 1     ZF = 0     OF = 1
+
+            c. CF = 0     SF = 1     ZF = 0     OF = 0
+
+          </font>
+
+
+  3. What will EAX contain after the following instructions execute?
+
+        .data
+            .dVal DWORD ?
+        .code
+              mov dVal,12345678h
+              mov ax,WORD PTR dVal+2
+              add ax,3
+              mov WORD PTR dVal,ax
+              mov eax,dVal
+
+        <font color = red>Answer:
+
+          EAX = 12375678h
+
+          </font>
+
+
+  4. What will be the value of the destination operand after each of the following instructions execute in sequence?
+
+    .data
+        var1 SBYTE -4,-2,3,1
+        var2 WORD 1000h,2000h,3000h,4000h
+        var3 SWORD -16,-42
+        var4 DWORD 1,2,3,4,5
+
+    .code
+        mov edx,var4   ;a.
+        movzx edx,var2 ;b.
+        mov edx,[var4+4]  ;c.
+        movsx edx,var1  ;d.
+
+
+        <font color = red>Answer:
+
+          a. 00000001h
+
+          b. 00001000h
+
+          c. 00000002h
+
+          d. FFFFFFFCh
+
+        </font>
+
+
+  5. Write an assembly program that inputs a student’s score and prints her/his grade. The student
+     will be “Excellent” if her/his score is between 90‐100, “Very Good” if the score is between
+     80‐89, “Good” if the score is between 70‐79, “Fair” if the score is between 60‐69, and “Fail”
+     if the score is lower than 60. (Assume scores are integers.)
+
+
+        <font color = red>Answer:</font>
+
+          <a href="../A3Q5.asm"> Program (Link)</a>
+
+
+  6. Write a program that uses a loop to calculate the first seven values of the Fibonacci number sequence,
+      described by the following formula:
+
+      Fib(1) = 1, Fib(2) = 1, Fib(n) = Fib(n -1) + Fib(n - 2)
+
+        <font color = red>Answer:</font>
+
+          <a href="../A3Q6.asm"> Program (Link)</a>
+
+
+  7. Using the XCHG instruction no more than three times,
+      reorder the values in four 8-bit registers from the order A,B,C,D to C,B,D,A.
+
+        <font color = red>Answer:
+
+          ;Letters represented by respective registers
+          ; A = al B = bl C = cl D = dl
+
+          ;start A,B,C,D
+
+          xchg A, C ; C,B,A,D
+          xchg A, D ; C,B,D,A
+
+        </font>
+
+
+  8. Write code using byte operands that adds two negative integers and causes the Overflow flag to be set.
+
+          <font color = red>Answer:
+
+            ; Book Definition: The Overﬂow ﬂag (OF) is set when the result of a signed arithmetic
+            ; operation is too large or too small to ﬁt into the destination.
+
+            ;using signed arithmetic with 8 bits range is -128 to 127
+
+            ;too small case
+            mov  al,-100
+            add  al,-100
+            ;OF = 1
+
+            ;too big case
+            mov  al,100
+            add  al,100
+            ;OF = 1
+
+            </font>
+
+  9. Write a program with a loop and indirect addressing that copies a string from source to target,
+     reversing the character order in the process. Use the following variables:
+
+        source BYTE "This is the CIS 335 Sec 2",0
+        target BYTE SIZEOF source DUP('0')
+
+        <font color = red>Answer:</font>
+
+          <a href="../A3Q9.asm"> Program (Link)</a>
+
+
+  10. Write a program with a loop and indexed addressing that calculates the sum of all the gaps
+      between successive array elements. The array elements are doublewords, sequenced in nondecreasing order.
+      So, for example, the array {0, 2, 5, 9, 10} has gaps of 2, 3, 4, and 1, whose sum equals 10.
+
+
+      <font color = red>Answer:</font>
+
+          <a href="../A3Q10.asm"> Program (Link)</a>
+
+
+  </p></a>
+</body>
+</html>

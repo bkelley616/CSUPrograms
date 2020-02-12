@@ -1,0 +1,71 @@
+Microsoft (R) Macro Assembler Version 14.22.27905.0	    10/02/19 11:37:09
+CIS335Assignment2Question4.asm				     Page 1 - 1
+
+
+				.386				;InstuctionInstruction list. Default is .8086
+
+				.model flat,stdcall
+					;.MODEL i=is an assembler directive that specifies memory model of your program.
+					;Under Win32, there's only on model, FLAT model. Where data segment and code segment share the same 4GB segment
+					;STDCALL tells MASM about parameter passing convention. For Windows API, we use stdcall
+
+				.stack 4096						;Reserve 4096-Byte stack
+				ExitProcess PROTO dwExitCode:dword
+					; FunctionName PROTO [ParameterName]: DataType, [ParameterName]: DataType, ...
+
+ 00000000			.data				;reserve storage for data
+					;data segment
+				 
+					; no data needed for this program
+					
+ 00000000			.code
+ 00000000			main proc
+
+ 00000000  83 C0 05			add EAX, 5		;add 5 to the EAX register
+ 00000003  83 C2 05			add EDX, 5		;add 5 to the EDX register
+
+				invoke ExitProcess,0	;INVOKE expression [, arguments]
+ 00000006  6A 00	   *	    push   +000000000h
+ 00000008  E8 00000000 E   *	    call   ExitProcess
+ 0000000D			main endp				;proc and endp is like bracket.
+				end main
+Microsoft (R) Macro Assembler Version 14.22.27905.0	    10/02/19 11:37:09
+CIS335Assignment2Question4.asm				     Symbols 2 - 1
+
+
+
+
+Segments and Groups:
+
+                N a m e                 Size     Length   Align   Combine Class
+
+FLAT . . . . . . . . . . . . . .	GROUP
+STACK  . . . . . . . . . . . . .	32 Bit	 00001000 DWord	  Stack	  'STACK'	 
+_DATA  . . . . . . . . . . . . .	32 Bit	 00000000 DWord	  Public  'DATA'	
+_TEXT  . . . . . . . . . . . . .	32 Bit	 0000000D DWord	  Public  'CODE'	
+
+
+Procedures, parameters, and locals:
+
+                N a m e                 Type     Value    Attr
+
+ExitProcess  . . . . . . . . . .	P Near	 00000000 FLAT	Length= 00000000 External STDCALL
+main . . . . . . . . . . . . . .	P Near	 00000000 _TEXT	Length= 0000000D Public STDCALL
+
+
+Symbols:
+
+                N a m e                 Type     Value    Attr
+
+@CodeSize  . . . . . . . . . . .	Number	 00000000h   
+@DataSize  . . . . . . . . . . .	Number	 00000000h   
+@Interface . . . . . . . . . . .	Number	 00000003h   
+@Model . . . . . . . . . . . . .	Number	 00000007h   
+@code  . . . . . . . . . . . . .	Text   	 _TEXT
+@data  . . . . . . . . . . . . .	Text   	 FLAT
+@fardata?  . . . . . . . . . . .	Text   	 FLAT
+@fardata . . . . . . . . . . . .	Text   	 FLAT
+@stack . . . . . . . . . . . . .	Text   	 FLAT
+
+	   0 Warnings
+	   0 Errors
