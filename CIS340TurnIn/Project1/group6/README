@@ -1,0 +1,103 @@
+
+
+Names: Brandon Kelley 2716916 & Anastasiya Kalinina 2754066
+********************************************************************************************************
+Project description:
+
+For project 1 we were tasked with making two separate C programs:
+
+The first being a program called matrixmul.c that took two input matrices from the user with
+dimensions 1<= n,k,m <= 300. Then outputted the resulting matrix of the multiplication, assuming that
+the dimensions were compatible to be multiplied.
+
+The second program was called encrypt.c which used a simple simple transposition cipher that works
+by dividing the string in half and swapping the subsets of the string using a recursive method.
+********************************************************************************************************
+
+Group member contribution (such as member1: 50%, member2: 50%):
+
+Brandon: 50%, Anastasiya: 50%
+
+********************************************************************************************************
+Compiling instruction:
+First we logged into the linux lab via Bitvise SSH.
+Then we navigated to where our program files were located after copying the over.
+To compile the code we used the corresponding command:
+gcc matrixmul.c -o matrixmul
+gcc encrypt.c -o encrypt
+
+this then produced two executable files named correspondingly,
+to run each program we individually typed:
+./matrixmul
+./encrypt
+
+the following output can be seen below:
+
+********************************************************************************************************
+
+A sample test run:
+
+matrixmul.c
+
+-------------------------------------------------------------------------------------------------------
+
+                                        Matrix Multiplier:
+
+        Please Enter in the Dimensions (n x k) of the First Matrix Seperated by a Space:
+
+                3 2
+
+        Matrix 1 Dimensions: 3 x 2
+        Enter elements of first matrix: type one row at a time and seperate each number with a space
+
+                1 1
+
+                1 2
+
+                -4 0
+
+        Please Enter in the Dimensions (k x m) of the Second Matrix Separated by a Space:
+
+                2 3
+
+        Matrix 2 Dimensions: 2 x 3
+        Enter elements of second matrix: type one row at a time and separate each number with a space
+
+                1 2 1
+
+                3 2 1
+
+        Resulting Answer Matrix:
+
+                3 x 3
+
+                4   4   2
+                7   6   3
+                -4   -8   -4
+
+
+----------------------------------------------------------------------------------------------------
+
+encrypt.c
+
+-------------------------------------------------------------------------------------------------------
+
+                                        String Encrypter:
+
+        Please Enter in a String to Encrpyt:
+
+                Test early and often!
+
+        String Length: 21 Character(s)
+        Encrypted String: aeyrleT sttf!enn aod
+
+-------------------------------------------------------------------------------------------------------
+
+********************************************************************************************************
+Existing bugs (things not finished):
+There are no existing bugs that we are aware of. The only issue that we ran into was that a windows
+machine uses a different compiler than gcc and also seemingly a different null terminator for strings.
+Because we had weird formatting issues with the output of encrypt.c when using microsoft visual studio
+but when running on the linux lab, the output was as expected.
+
+********************************************************************************************************

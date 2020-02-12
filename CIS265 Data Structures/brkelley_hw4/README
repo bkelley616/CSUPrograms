@@ -1,0 +1,47 @@
+Your name and CSUID
+
+Brandon Kelley 2716916
+
+***************************************************************************************
+Program compiling and program execution instruction:
+
+I first logged into the csu linux lab using bitvise,
+next I compiled all the code files using the following commands:
+
+javac IStack.java
+javac ArrayStack.java
+javac StackFullException.java
+javac Evaluate.java
+
+after compiling, I ran the code with the following command:
+
+java Evaluate
+
+This is because the Evaluate method contains the main method, I then use
+my program by typing in user input.
+
+***************************************************************************************
+A sample test run (again in text)
+
+Please enter an expression to be solved,
+to exit the program, type "exit"
+
+14-3*4+2*5-6*2
+
+Solving: 14-3*4+2*5-6*2
+Answer: 0
+
+****************************************************************************************
+Existing bug (things not finished)
+
+** note I set my program up to run multiple times (while loop)
+to exit the user types "exit", my reasoning is because
+I believe this is more user friendly and acts more realistically
+as a calculator application**
+
+There are no bugs that I am aware of, assignment went well but took me a good amount of time
+comparatively speaking. I was not able to implement the parentheses for extra credit but left in
+the commented code of my attempt. reason being, I may expand upon this assignment to make my own
+calculator app for android
+
+

@@ -1,0 +1,135 @@
+
+<!-- saved from url=(0067)http://galois.cs.csuohio.edu/teaching/cis340fa19/projects/p1s1.html -->
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" class="gr__galois_cs_csuohio_edu"><head><meta http-equiv="Content-Type" content="text/html; charset=windows-1252"> 
+<title>CIS 340 (Fall 2019): Project 1</title> 
+ 
+<link rel="STYLESHEET" href="./CIS 340 (Fall 2019)_ Project 1_files/class.css" type="text/css"> 
+</head>
+<body data-gr-c-s-loaded="true">
+
+<h3> Project1: due on Sept 12th, 2019 at 11:59:59pm (EST).</h3>
+
+<span style="font-weight: bold;"><br>
+I. Overview:</span><br>
+<a href="http://galois.cs.csuohio.edu/teaching/cis340fa19/projects/p1s1_group.txt">Group Arrangement</a>.
+<br>
+In this assignment, you will do a number of C programming exercises.
+<ol>
+<li> Matrix multiplication (matrixmul.c):<br>
+Given an n x k matrix A and an k x m matrix B, with 1&#8804;n,m,k&#8804;300, write a C program
+that computes the matrix product C=AB.  All entries in matrices A and B are integers with
+abolute value less than 1000, so you don't need to worry about overflow.  If matrices A and B
+do not have the right dimensions to be multiplied, the product matrix C should have its number of 
+rows and columns both set to zero.  Input/Output: please use <code>scanf</code> and <code>printf</code>
+to handle the data input and output. <br> 
+<br>
+Input format:<br>
+Line 1: Two space-separated integers, n and k.<br>
+Line 2 to n+1: line i+1 contains k space-separated integers: row i of matrix A.<br>
+Line n+2: Two space-separated integers, k and m.<br>
+Line n+3 to n+k+4: Line i+n+3 contains m space-separated integers: row i of matrix B.<br>
+
+<br>
+Sample Input:
+<pre>3 2
+1 1
+1 2
+-4 0
+2 3
+1 2 1
+3 2 1
+</pre>
+
+<br>
+Output format:<br>
+Line 1: two space-separated n and m, the dimension of matrix C.<br>
+Line 2 to m+1: Line i+1 contains m space-separated integers: row i of matrix C.<br>
+
+<br>
+Sample Output:<br>
+<pre>3 3
+4 4 2
+7 6 3
+-4 -8 -4
+</pre>
+</li>
+<li>Transposition Cipher (encrypt.c): <br>
+A very simple transposition cipher encrypt(S) can be described by the following rule:<br>
+<ul>
+<li>If the length of S is 1 or 2, then encrypt(S) is S.</li>
+<li>If S is a string of N characters s<sub>1</sub> s<sub>2</sub>...s<sub>N</sub> and k=&#8970;N/2&#8971;,
+then<br>
+enc(S)=encrypt(s<sub>k</sub>s<sub>k-1</sub>...s<sub>2</sub>s<sub>1</sub>)+encrypt(s<sub>N</sub>s<sub>N-1</sub>...s<sub>k+1</sub>)<br>
+where + indicates string cancatenation.<br>
+For example, encrypt("OK")="OK" and encrypt("12345678")="34127856".</li>
+</ul>
+Write a program to implement this cipher, given an arbitary text string from keyboard, up to 8192 characters.  
+It's better to write a separate encryption function, similar to the following:
+<pre>char* encrypt(char *string, size_t length) {
+  // you fill this out
+}
+</pre>
+
+Input Format:<br>
+an abitary string (with the length up to 8192 characters).<br>
+<br>
+Sample Input:<br>
+Test early and often!<br>
+<br>
+Output Format <br>
+Line 1: One integer: the toal number of characters in the string.<br>
+Line 2: The enciphered string.<br>
+<br>
+Sample Output:<br>
+<pre>21
+aeyrleT sttf!enn aod
+</pre>
+</li>
+</ol>
+
+<span style="font-weight: bold;">
+<br>
+II. Grading Criteria:</span><br>
+<ol>
+<li>Please make sure your program compiles, otherwise your submission will not be graded and you will receive zero. </li>
+<ul>
+<li>Point deduction rule:
+</li><li>Compile warning: 3 points each.</li>
+<li>Minor error: such as not meeting the assignment input/output requirement, 5 points each.</li>
+<li>Major error: examples include, infinite loop, runtime errors, any segmentation fault, 15 points each.</li>
+</ul>
+<li>matrixmul.c: 45%.</li>
+<li>encrypt.c: 45%.</li>
+<li>README: 10%.</li>
+</ol>
+
+
+<span style="font-weight: bold;">
+<br>
+III. Submission:</span><br>
+
+<ol>
+<li>Each group submits one copy of the source code: matrixmul.c and encrypt.c.</li>
+<li>Create a folder and name it as your group name, e.g., group1 (all lower case).
+</li><li>Copy all your source code to the above folder (clean your source code folder and remove all binary files).
+</li><li>Edit a README file (in text format only, do not use Microsoft, use gedit) and provide the following information:
+<ul>
+<li>Project description</li>
+<li>Group member contribution (such as member1: 50%, member2: 50%)</li>
+<li>Compiling instruction</li>
+<li>A sample test run</li>
+<li>Existing bugs (things not finished)</li>
+</ul>
+</li>
+<li>Log in grail, go to the parent director of the folder you created, and run (suppose the your folder is "group1")
+<pre>turnin -c cis340w -p p1s1 group1
+</pre>
+If there is no error message, your submission is successful.</li>
+<li>Your most recent submission will always automatically overwrite the previous one.</li>
+
+</ol>
+
+
+
+
+</body></html>

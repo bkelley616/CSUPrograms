@@ -1,0 +1,138 @@
+
+Names: Brandon Kelley 2716916 & Kyle Hoffman 2701222
+
+********************************************************************************************************
+Project description:
+
+In project 2 we were required to write a program consisting of three files: main.c, node.c and node.h.
+With main.c being the driver class that runs the program, node.c providing the implementation of the
+linked list / print methods and node.h serving as the header file to define the linked list / print
+methods.
+
+The program can either take user input or read from a data file. It will print out the linked list in
+the given order, then perform an insertion sort and print out the resulting sorted linked list.
+0 is used as the end of the data being inputted.
+
+********************************************************************************************************
+
+Group member contribution (such as member1: 50%, member2: 50%):
+
+Brandon: 50%, Kyle: 50%
+
+********************************************************************************************************
+
+Compiling instruction:
+**Note** title of executable file made by "make" command is called "main"
+
+First we logged into the linux lab via Bitvise SSH.
+Then we navigated to where our program files were located after copying the files over.
+To compile the code manually we used the corresponding command:
+gcc main.c node.c -o main
+
+meanwhile with the included makefile we made, we can just use the "make" command to compile the code
+
+--Note-- for context, this is the makefile we made:
+
+makeProgram: main.c node.c
+	gcc -o main main.c node.c -I.
+
+the following output of the program can be seen below in the next section.
+
+********************************************************************************************************
+
+Sample Test Run (w/ edge cases included)
+
+A sample test run (Case: 0 numbers enters from user/file)
+Input:0
+
+Output:
+-------------------------------------------------------------------------------------------------------
+
+                        Project 2: Linked List Before and After Insertion Sort
+
+
+        Please Enter Each Node of the Linked List:
+
+                0
+
+
+        Error: Doubly Linked List is Empty
+
+-------------------------------------------------------------------------------------------------------
+
+A sample test run (Case: 1 number entered from user/file)
+Input: 10 0
+
+Output:
+
+-------------------------------------------------------------------------------------------------------
+
+                        Project 2: Linked List Before and After Insertion Sort
+
+
+        Please Enter Each Node of the Linked List:
+
+                10
+                0
+
+
+        The Unsorted Doubly Linked List is:
+
+                10
+
+
+        Performing Insertion Sort...
+
+
+        The sorted Doubly Linked List is:
+
+                10
+
+-------------------------------------------------------------------------------------------------------
+
+A sample test run (Case: Multiple Numbers Inputted from user or data file)
+Input:
+---------------------------------------------------------------
+--Note-- we are using the provided "pre-prepared data file":
+30
+20
+50
+70
+10
+0
+---------------------------------------------------------------
+Output:
+-------------------------------------------------------------------------------------------------------
+
+                        Project 2: Linked List Before and After Insertion Sort
+
+
+        Please Enter Each Node of the Linked List:
+
+
+
+        The Unsorted Doubly Linked List is:
+
+                30<==>20<==>50<==>70<==>10
+
+
+        Performing Insertion Sort...
+
+
+        The sorted Doubly Linked List is:
+
+                10<==>20<==>30<==>50<==>70
+
+-------------------------------------------------------------------------------------------------------
+
+********************************************************************************************************
+
+Existing bugs (things not finished):
+As far as we know, there are no bugs within our program. There may be better ways to implement things or
+manage memory but overall our program meets the requirements of the assignment.
+
+********************************************************************************************************
+
+I personally want to say thank you Christen to all the time and help you dedicated to helping me
+understand and write this program. It is greatly appreciated and I learned so much. Even though
+its your "job" you are the most helpful T.A. , thanks again.

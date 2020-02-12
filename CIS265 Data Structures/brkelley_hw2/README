@@ -1,0 +1,33 @@
+Your name and CSUID
+
+Brandon Kelley 2716916
+
+
+Compiling and run instruction
+
+I first use bitvise to connect to linux lab.
+Once in the terminal I run the following commands to compile the code:
+javac HeartRate.java
+javac HRIllegalValueException.java
+
+then I made sure the HR.txt file is in the same directory as my code
+
+to run and test my code I do the following command (HeartRate contains the main method):
+
+java HeartRate
+
+it then produces the correct output as seen below
+
+
+A sample test run (again in text)
+
+HRIllegalValueException: Input can't be negative.
+HRIllegalValueException: Input can't be negative.
+Good Data: 24
+Bad Data: 6
+
+
+Existing bug (things not finished)
+
+There are no bugs in my program, my main difficulty was figuring out how to "consume"
+the bad data. But overall the assignment went well

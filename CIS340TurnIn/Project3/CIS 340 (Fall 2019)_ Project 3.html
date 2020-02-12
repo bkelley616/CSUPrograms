@@ -1,0 +1,158 @@
+
+<!-- saved from url=(0067)http://galois.cs.csuohio.edu/teaching/cis340fa19/projects/p3s1.html -->
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" class="gr__galois_cs_csuohio_edu"><head><meta http-equiv="Content-Type" content="text/html; charset=windows-1252"> 
+<title>CIS 340 (Fall 2019): Project 3</title> 
+ 
+<link rel="STYLESHEET" href="./CIS 340 (Fall 2019)_ Project 3_files/class.css" type="text/css"> 
+</head>
+<body data-gr-c-s-loaded="true">
+
+<h3> Project3: due on Oct 07th, 2019 at 11:59:59pm (EDT).</h3>
+<h3><a href="http://galois.cs.csuohio.edu/teaching/cis340fa19/projects/p3s1_group.txt">Group Arrangment</a></h3>
+
+<span style="font-weight: bold;"><br>
+I. Overview:</span><br>
+<br>
+The goal of this project is to introduce you to the
+basic library functions for reading directories in
+Linux.  You will implement a program that lists 
+all the files in a given directory. The final
+listing will be accomplished by your 
+stringout(const *char[], const char* ) function.
+<ol>
+<li> Your program should take one or two 
+command line parameters, where the first is a
+path (relative or absolute) to a directory and 
+the second, if present, is passed along to 
+stringout( , ) as the second argument.  
+If there is only one command line argument 
+supply an empty string for the second argument 
+to stringout( , ).  An example command line is:
+<pre>$ myls path_to_dir [flag]
+</pre>
+Here "myls" is the name of your executable file.
+Some examples of "path_to_dir" are "/", 
+"/usr/local/bin", ".", "..".  The optional flags 
+can be "-f" or "-b", where "f" stands for the 
+ascending order, and "b" is for the descending order 
+(provided by <code>strcmp()</code>).
+</li>
+<li> Your program should list all of the files 
+in the directory specified by "path_to_dir" 
+to standard output in the order encountered 
+by <code>readdir( )</code>, or else in the order indicated 
+by the flags parameter if it is one of 
+the proper nonempty forms.  List the names 
+of the files one per line.
+</li>
+<li>stringout.c: considering that the number of files in
+a particular directory is not pre-determined, your program
+is expected to be robust enough so that it can list any number
+of files. In addition, your program is expected to output
+a sorted file list (either in ascending or descending order).
+To achieve the goal in an efficient way, you need to implement
+stringout( , ) function as explained below.
+<ul>
+<li>stringout function takes two arguments: const char*[] and 
+const char *.  The first argument is supposed to be a NULL
+terminated array of C style strings, and the second is just 
+a C style string.  This function call stringout (sa, flag) 
+should write the strings pointed by each element of sa (again
+sa is a pointer array) to system standard output, one per line,
+in an order which is determined by flag.  If flag is an empty 
+string, the output order will be exactly as in sa.  If flag
+is "-f", the output will be in ascending order. And flag "-b"
+will give a descending order of the file list. </li>
+<li>The intention of using sa (char*[] data structure) is to simplify 
+the file name sorting. Since the number of files in a directory
+is unknown, it is suggested that you repeatedly 
+<code>malloc()</code> a 
+string array (with fixed size) to store the file names found in
+a directory.  For example, suppose you initially allocate 
+a string buffer with 1024 bytes to hold the filenames (note that
+you need to append a null terminator at the end of each file
+name). If the space is running out (there are too many files),
+you then <code>malloc()</code> another string buffer with 
+the same size.
+Your program should repeat the process until all files can be
+stored in the buffers. Everytime you copy a file name into
+the buffer, keep in mind that you separate them with null 
+terminators, and you should assign the address of the 
+corresponding string (the file name) to next available 
+sa element.</li>
+<li>
+For example, if your string buffer (char buf[]) contains the 
+following characters "abc.txt\0def.txt\0ghi.txt\0" (three files:
+abc.txt, def.txt and ghi.txt), sa[0] should
+store the address of buf[0], sa[1] should store the address of
+buf[8], and sa[2] should store the address of buf[17]. In this way,
+when sorting is performed, you only need to swap sa[0], sa[1] 
+and sa[2], instead of modify anything in buf.
+</li>
+</ul>
+</li>
+<li>
+Your project submission should include the
+implementation files myls.c (along with its 
+hearder file), stringout.c (along with its 
+header file), a Makefile, and a README file.
+</li>
+</ol>
+
+<span style="font-weight: bold;"><br>
+II. Note: </span><br>
+<ol>
+<li>Your program must be written in C.  
+Operations on C-style strings may
+make use of the C string library.
+</li>
+<li>All operations on directories must be done using 
+the system calls described in the lectures.  
+These are declared in dirent.h and include opendir( ), 
+readdir( ), rewinddir( ), and closedir( ).  
+</li>
+</ol>
+
+<span style="font-weight: bold;"><br>
+III. Grading Criteria:</span><br>
+<ul>
+<li>Please make sure your program compiles, otherwise your submission will not be graded and you will receive zero. </li>
+<li>Point deduction rule:
+</li><li>Compile warning: 3 points each.</li>
+<li>Minor error: such as not meeting the assignment input/output requirement, 5 points each.</li>
+<li>Major error: examples include, infinite loop, runtime errors, any segmentation fault, 15 points each.</li>
+<li>Basic list function (unordered): 60%.</li>
+<li>Ascending order sorting (-f): 15%.</li>
+<li>Descending order sorting (-b): 15%.</li>
+<li>README: 10%.</li>
+</ul>
+
+<span style="font-weight: bold;"><br>
+IV. Submission:</span><br>
+<ol>
+<li>Each group submits one copy of the source code.</li>
+<li>Create a folder and name it as your group name, e.g., group1.
+</li><li>Copy all your source code to the above folder (clean your source code folder and remove all binary files).
+</li><li>Compile a README file (in text format only) and provide the following information:
+<ul>
+<li>Project description</li>
+<li>Group members' contributions (in percentage)</li>
+<li>Compiling instruction</li>
+<li>A sample test run</li>
+<li>Existing bugs (things not finished)</li>
+</ul>
+</li>
+<li>Log in grail, go to the parent director of your group folder, and run (suppose the group folder is "group1")
+<pre>turnin -c cis340w -p p3s1 group1
+</pre>
+If there is no error message, your submission is successful.</li>
+<li>Your most recent submission will always automatically overwrite the previous one.</li>
+
+</ol>
+
+
+
+
+
+
+</body></html>

@@ -1,0 +1,224 @@
+body {
+/* background-image:url("../img_lib/bk-paper.jpg"); */
+/* background-color: #E4F4E4; */
+}
+
+h1, h2 
+{
+  text-align: center;
+  color:#286DC2;
+}
+
+.new
+{
+	font-weight:bold;
+	color:red;
+}
+
+.attn
+{ 
+  	font-weight:bold;
+	color:#151B54;
+}
+
+.i
+{
+	font-style:italic;
+}
+
+.cancel
+{
+   text-decoration: line-through;
+}
+
+a:link
+{
+   color:#286DC2;
+}
+a:visited
+{
+   color:#286DC2;
+}
+a:hover 
+{
+    color:#FFFF00;
+    background-color: #286DC2;
+}
+
+/* for the header */
+a.plain:link
+{
+	text-decoration:none;
+	font-weight:bold;
+	color:#286DC2;
+}
+a.plain:visited
+{
+	color:#286DC2;
+    text-decoration:none;
+	font-weight:bold;	
+}
+
+a.plain:hover
+{
+	color:#FFFFFF;
+	background-color:#286DC2;
+	text-decoration:none;
+}
+
+
+/* if sub-titles are using tables*/
+.subTitle 
+{
+   text-align: left;
+   background-color: #286DC2;
+   color: #FFFFFF;
+   font-weight: bold;
+   font-size: 110%;
+}
+
+.category
+{
+  background-color: #CCCCCC;
+}
+
+.exam
+{
+  background-color: #FFFF99;
+  font-weight: bold;
+}
+
+.note
+{
+  color: #286DC2;
+  text-align: center;
+  font-weight: bold;
+}
+
+/* for IE 5.0 or lower, you have to add text-align: center; to the .Center class */
+.center
+{
+/* recommended */
+	margin-left:auto;
+	margin-right:auto;
+	text-align: center;
+}
+
+.copyright
+{
+	text-justify:distribute-all-lines;
+	font-size:small;
+	font-style:italic;
+}
+
+td.bold
+{
+  font-weight: bold;
+}
+span.note
+{
+	font-style:italic;
+	color:#910000;
+}
+
+span.email
+{
+	font-size:small;
+	color:#286DC2;
+	font-weight: bold;
+}
+/* for pictured list */
+UL.candidate
+{
+   list-style-image: url("../img_lib/blueRibbonSmall.gif")
+}
+
+UL.sample
+{
+   list-style-image: url("../img_lib/rwb_ribbonSmall.gif")
+}
+div.cancel
+{
+   text-decoration: line-through;
+}
+div.new
+{
+   border: ridge red;
+   color: red;
+   font-weight: bold;
+}
+
+hr
+{ 
+    size: 1; 
+    color: Gray; 
+}
+
+img
+{
+	border-width: 0;
+}
+
+table.schedtable {
+  border-color: #000000;
+  border-width: 1px;
+  border-spacing: 1px;
+  border-style: solid;
+  border-collapse: collapse;
+}
+
+#scheduletable tr {
+   border-color: black;
+   border-style: solid;
+   border-width: 1px;
+}
+
+#scheduletable td {
+   border-color: black;
+   border-style: solid;
+   border-width: 1px;
+}
+
+
+.sectionClass {
+  border-width:2; 
+  border-style: outset; 
+  border-color: #286DC2;
+  background: #286DC2;
+  padding: 0px; 
+  margin: 0px;
+  text-indent: .1in;
+  color: white;
+  }
+
+.normalschedule {
+    text-align: center;
+    background-color: #FFFFdd;
+}
+
+.normaltextschedule {
+    text-align: left;
+    background-color: #FFFFdd;
+    padding-left: 5px;
+}
+
+.assignschedule {
+    text-align: center;
+    background-color: #FFFFdd;
+    color: darkred;
+}
+
+.noclasschedule {
+    text-align: center;
+    background-color: #ffbbbb;
+    color: black;
+    font-weight: bold;
+}
+
+.eventschedule {
+    text-align: center;
+    background-color: #bbffbb;
+    color: black;
+    font-weight: bold;
+}
+

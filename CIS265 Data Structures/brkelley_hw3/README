@@ -1,0 +1,41 @@
+Your name and CSUID
+
+Brandon Kelley 2716916
+
+
+Compiling and run instruction
+
+I first logged into the linux lab using bitvise, upon doing so I ran the following command:
+
+javac Testish.java
+
+after compiling the code I then tested and ran the code using the following command:
+
+java Testish unfriendly
+java Testish elf unfriendly
+java Testish els unfriendly
+java Testish
+
+**the program itself is ran from "java Testish" but since the program takes string arguments, we have the
+option to also include arguments afterwords. I tested the given examples to be able to provide a sample output
+I tested a few additonal cases which also functioned as expected**
+
+
+A sample test run (again in text) **following same order as above run examples (teacher given example)**
+
+unfriendly is elfish
+unfriendly contains elf
+unfriendly does not contain els
+Please provide one or two strings
+
+
+Existing bug (things not finished)
+
+There are no bugs in my program and the assignment went well. My main issues were establishing the logic needed
+for the recursion, and realising that you can pass in arguments from where you run the program in the terminal
+I initially thought I needed a scanner for keyboard input from the command line. It also took a lot of looking at the
+java String api to figure out how I could use the correct methods.
+
+** I wanted to note that I commented the code quite a bit which I was told was ok for the last assignment,
+I feel like this assignment had more difficult logic so I felt the need to explain for myself and the implied "user"
+of the code, what each part did in detail. **

@@ -1,0 +1,65 @@
+Your name and CSUID:
+
+Brandon Kelley 2716916
+
+
+Compiling instruction:
+
+To compile the code on the command line in linux. I had to first remote into the linux lab using bitvise
+next, I ran these commands:
+
+javac Test.java
+javac BankAccount.java
+javac Payable.java
+javac SavingAccount.java
+javac CheckingAccount.java
+javac GiftCard.java
+
+to run the code, I then executed the Test file using (this is where the main method is located):
+
+java Test
+
+
+A sample test run (again in text):
+
+Unable to complete transaction, withdraw amount is greater than current balance
+Successful withdraw of $800.0
+Successful withdraw of $800.0
+Payment of $2000.0 made to Alonso
+Incorrect Pin Entered
+Insufficient Funds, Payment Declined
+Firstname: Cody
+Lastname: Allen
+Saving's Account Number: 145604
+Balance: 500.0
+Interest: 1.0%
+Firstname: Shane
+Lastname: Bieber
+Checkings Account Number: 3708625
+Balance: 400.0
+Interest: 0.1%
+Pin: 1234
+Firstname: Adam
+Lastname: Cimber
+Saving's Account Number: 564299
+Balance: 700.0
+Interest: 1.0%
+Firstname: Corey
+Lastname: Kluber
+Checkings Account Number: 3663531
+Balance: 0.0
+Interest: 0.1%
+Pin: 4321
+Gift Card Pin: gift
+Gift Card Balance: 1000.0
+
+
+Existing bug (things not finished):
+
+There weren't any bugs that I couldn't work out.
+The only main issues I had to solve were overriding the default To String method
+to produce the correct formatting when the objects are printed out.
+Also didn't realise I needed to have "concrete" deposit and withdraw methods in bank account
+but my code wouldn't compile until I figured that out and solved it.
+Also needed to figure out how to generate a number of a specified size randomly, that took some time and research.
+Overall the Assignment went well.

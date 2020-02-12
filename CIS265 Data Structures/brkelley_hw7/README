@@ -1,0 +1,323 @@
+Your name and CSUID
+
+Brandon Kelley 2716916
+
+
+************************************************************************************************************************
+Compiling instruction
+first I logged into the Linux lab using bitvise.
+I then ran the following command to compile the code:
+javac *.java
+
+this command that I recently learned about compiles all the .java files into class files within
+that directory
+
+to run the code I then ran the following command:
+java Test
+
+the output can be seen below: (it is quite long)
+
+************************************************************************************************************************
+A sample test run (again in text)
+
+inserted 65 data items into Linear Probing Hash Table
+
+5       Lampkin       7	CB	25	6' 0"	189 lbs	2	Oklahoma State
+8       Charles       82	TE	28	6' 3"	257 lbs	4	Georgia
+9       Ratley       18	WR	23	6' 2"	200 lbs	2	Texas A&M
+10       Friend       61	OL	25	6' 2"	305 lbs	1	Temple
+11       Hilliard       25	RB	24	5' 11"	202 lbs	2	Tulane
+12       Bright       98	OT	-	6' 5"	299 lbs	R	Stanford
+13       Randall       23	CB	26	5' 11"	196 lbs	5	Arizona State
+16       Richardson       93	DT	28	6' 3"	295 lbs	7	Missouri
+17       Pipkins       41	CB	25	6' 0"	196 lbs	3	Oklahoma State
+19       Burris       31	CB	25	6' 0"	212 lbs	4	North Carolina State
+20       Jackson       16	WR	25	5' 10"	200 lbs	1	Mary Hardin-Baylor
+24       Taylor       53	LB	28	6' 1"	230 lbs	5	Florida Atlantic
+25       Stanton       9	QB	34	6' 3"	226 lbs	12	Michigan State
+26       Ogunjobi       65	DT	24	6' 3"	305 lbs	3	Charlotte
+27       Brown       86	TE	24	6' 5"	258 lbs	2	Oregon
+29       Smith       50	DE	27	6' 1"	266 lbs	6	Arkansas
+30       Higgins       81	WR	24	6' 1"	198 lbs	4	Colorado State
+32       Bitonio       75	G	27	6' 4"	305 lbs	6	Nevada
+33       Seaton       60	OT	25	6' 8"	325 lbs	1	Villanova
+34       Woodson-Luster       56	LB	23	6' 1"	220 lbs	2	Arkansas State
+35       Sankoh       14	S	21	5' 11"	214 lbs	1	-
+36       Whitehead       35	S	26	5' 11"	195 lbs	3	Auburn
+37       Harris       84	TE	27	6' 7"	230 lbs	6	Milwaukee
+38       Avery       55	LB	23	6' 0"	250 lbs	2	Memphis
+39       Landry       80	WR	26	5' 11"	196 lbs	6	LSU
+40       Murray       21	S	25	5' 11"	199 lbs	4	Minnesota
+41       Strong       10	WR	25	6' 2"	220 lbs	4	Arizona State
+42       Gaines       33	CB	28	6' 0"	193 lbs	6	Rice
+45       Carrie       38	CB	28	6' 0"	204 lbs	6	Ohio
+46       Beckham       Jr.	13	WR	26	5' 11"	200 lbs	6	LSU
+48       Njoku       85	TE	22	6' 4"	246 lbs	3	Miami (FL)
+52       Gilbert       3	QB	27	6' 3"	230 lbs	2	SMU
+55       Sheehy-Guiseppi       14	WR	-	5' 11"	181 lbs	R	-
+56       Coley       93	DT	24	6' 1"	310 lbs	3	Florida Atlantic
+59       Ekuale       96	DT	25	6' 3"	300 lbs	1	Washington State
+60       Schobert       53	LB	25	6' 1"	245 lbs	4	Wisconsin
+62       Hines       59	LB	24	6' 1"	235 lbs	2	Houston
+63       Callaway       11	WR	22	5' 11"	200 lbs	2	Florida
+64       Hubbard       74	C	27	6' 4"	295 lbs	6	UAB
+65       Tretter       64	C	28	6' 4"	307 lbs	7	Cornell
+66       Kalis       68	G	25	6' 4"	310 lbs	2	Michigan
+67       Chubb       24	RB	23	5' 11"	227 lbs	2	Georgia
+68       Kush       64	G	29	6' 4"	317 lbs	7	California (PA)
+69       Robinson       78	OT	26	6' 5"	330 lbs	6	Auburn
+70       Armstrong       52	LB	28	6' 3"	235 lbs	7	Miami (FL)
+71       Vernon       54	LB	28	6' 2"	270 lbs	8	Miami (FL)
+72       Burnett       42	S	30	6' 1"	209 lbs	10	Georgia Tech
+74       Ward       21	CB	21	5' 11"	190 lbs	2	Ohio State
+75       Mays       32	RB	24	5' 10"	230 lbs	2	Utah State
+77       Mayfield       6	QB	23	6' 1"	215 lbs	2	Oklahoma
+78       DeValve       87	TE	26	6' 3"	245 lbs	4	Princeton
+85       Jones       0	DE	27	6' 2"	256 lbs	2	Nevada
+86       Corbett       63	G	23	6' 4"	306 lbs	2	Nevada
+88       Thomas       92	DE	23	6' 5"	278 lbs	2	Miami (FL)
+89       Kirksey       58	LB	26	6' 2"	235 lbs	6	Iowa
+95       Lawrence       99	DT	26	6' 2"	295 lbs	1	Auburn
+96       Mitchell       39	CB	26	5' 11"	191 lbs	6	Oregon
+98       Zettel       97	DE	26	6' 4"	270 lbs	4	Penn State
+99       Willies       84	WR	24	6' 4"	207 lbs	2	Texas Tech
+100       Lamm       74	OT	26	6' 6"	310 lbs	5	Appalachian State
+101       Witzmann       78	OL	28	6' 7"	320 lbs	5	South Dakota State
+104       Harrison       69	OT	25	6' 6"	295 lbs	2	West Georgia
+105       Garrett       95	DE	23	6' 4"	272 lbs	3	Texas A&M
+106       Price       91	DT	24	6' 3"	318 lbs	3	UTSA
+107       Wilson       1	CB	23	6' 0"	184 lbs	2	Houston
+
+
+Lampkin
+Charles
+Ratley
+Friend
+Hilliard
+Bright
+Randall
+Richardson
+Pipkins
+Burris
+Jackson
+Taylor
+Stanton
+Ogunjobi
+Brown
+Smith
+Higgins
+Bitonio
+Seaton
+Woodson-Luster
+Sankoh
+Whitehead
+Harris
+Avery
+Landry
+Murray
+Strong
+Gaines
+Carrie
+Beckham
+Njoku
+Gilbert
+Sheehy-Guiseppi
+Coley
+Ekuale
+Schobert
+Hines
+Callaway
+Hubbard
+Tretter
+Kalis
+Chubb
+Kush
+Robinson
+Armstrong
+Vernon
+Burnett
+Ward
+Mays
+Mayfield
+DeValve
+Jones
+Corbett
+Thomas
+Kirksey
+Lawrence
+Mitchell
+Zettel
+Willies
+Lamm
+Witzmann
+Harrison
+Garrett
+Price
+Wilson
+
+44 collisions occurred using linear probing
+
+inserted 65 data items into Double-Hash Hash Table
+
+5       Lampkin       7	CB	25	6' 0"	189 lbs	2	Oklahoma State
+8       Charles       82	TE	28	6' 3"	257 lbs	4	Georgia
+9       Ratley       18	WR	23	6' 2"	200 lbs	2	Texas A&M
+10       Wilson       1	CB	23	6' 0"	184 lbs	2	Houston
+11       Hilliard       25	RB	24	5' 11"	202 lbs	2	Tulane
+12       Friend       61	OL	25	6' 2"	305 lbs	1	Temple
+16       Richardson       93	DT	28	6' 3"	295 lbs	7	Missouri
+17       Pipkins       41	CB	25	6' 0"	196 lbs	3	Oklahoma State
+19       Burris       31	CB	25	6' 0"	212 lbs	4	North Carolina State
+20       Jackson       16	WR	25	5' 10"	200 lbs	1	Mary Hardin-Baylor
+23       Randall       23	CB	26	5' 11"	196 lbs	5	Arizona State
+24       Taylor       53	LB	28	6' 1"	230 lbs	5	Florida Atlantic
+25       Stanton       9	QB	34	6' 3"	226 lbs	12	Michigan State
+26       Ogunjobi       65	DT	24	6' 3"	305 lbs	3	Charlotte
+27       Brown       86	TE	24	6' 5"	258 lbs	2	Oregon
+28       Bright       98	OT	-	6' 5"	299 lbs	R	Stanford
+29       Smith       50	DE	27	6' 1"	266 lbs	6	Arkansas
+30       Higgins       81	WR	24	6' 1"	198 lbs	4	Colorado State
+32       Bitonio       75	G	27	6' 4"	305 lbs	6	Nevada
+34       Woodson-Luster       56	LB	23	6' 1"	220 lbs	2	Arkansas State
+35       Sankoh       14	S	21	5' 11"	214 lbs	1	-
+37       Harris       84	TE	27	6' 7"	230 lbs	6	Milwaukee
+38       Whitehead       35	S	26	5' 11"	195 lbs	3	Auburn
+39       Landry       80	WR	26	5' 11"	196 lbs	6	LSU
+40       Murray       21	S	25	5' 11"	199 lbs	4	Minnesota
+41       Strong       10	WR	25	6' 2"	220 lbs	4	Arizona State
+45       Carrie       38	CB	28	6' 0"	204 lbs	6	Ohio
+46       Beckham       Jr.	13	WR	26	5' 11"	200 lbs	6	LSU
+48       Njoku       85	TE	22	6' 4"	246 lbs	3	Miami (FL)
+49       Seaton       60	OT	25	6' 8"	325 lbs	1	Villanova
+52       Gilbert       3	QB	27	6' 3"	230 lbs	2	SMU
+55       Sheehy-Guiseppi       14	WR	-	5' 11"	181 lbs	R	-
+56       Coley       93	DT	24	6' 1"	310 lbs	3	Florida Atlantic
+59       Ekuale       96	DT	25	6' 3"	300 lbs	1	Washington State
+61       Avery       55	LB	23	6' 0"	250 lbs	2	Memphis
+62       Hines       59	LB	24	6' 1"	235 lbs	2	Houston
+63       Callaway       11	WR	22	5' 11"	200 lbs	2	Florida
+64       Kalis       68	G	25	6' 4"	310 lbs	2	Michigan
+65       Tretter       64	C	28	6' 4"	307 lbs	7	Cornell
+66       Armstrong       52	LB	28	6' 3"	235 lbs	7	Miami (FL)
+67       Chubb       24	RB	23	5' 11"	227 lbs	2	Georgia
+69       Robinson       78	OT	26	6' 5"	330 lbs	6	Auburn
+70       Kush       64	G	29	6' 4"	317 lbs	7	California (PA)
+71       Gaines       33	CB	28	6' 0"	193 lbs	6	Rice
+73       Hubbard       74	C	27	6' 4"	295 lbs	6	UAB
+74       Ward       21	CB	21	5' 11"	190 lbs	2	Ohio State
+75       Mays       32	RB	24	5' 10"	230 lbs	2	Utah State
+77       Mayfield       6	QB	23	6' 1"	215 lbs	2	Oklahoma
+78       DeValve       87	TE	26	6' 3"	245 lbs	4	Princeton
+79       Price       91	DT	24	6' 3"	318 lbs	3	UTSA
+82       Vernon       54	LB	28	6' 2"	270 lbs	8	Miami (FL)
+85       Jones       0	DE	27	6' 2"	256 lbs	2	Nevada
+86       Corbett       63	G	23	6' 4"	306 lbs	2	Nevada
+88       Thomas       92	DE	23	6' 5"	278 lbs	2	Miami (FL)
+89       Kirksey       58	LB	26	6' 2"	235 lbs	6	Iowa
+95       Lawrence       99	DT	26	6' 2"	295 lbs	1	Auburn
+96       Mitchell       39	CB	26	5' 11"	191 lbs	6	Oregon
+98       Zettel       97	DE	26	6' 4"	270 lbs	4	Penn State
+99       Willies       84	WR	24	6' 4"	207 lbs	2	Texas Tech
+100       Burnett       42	S	30	6' 1"	209 lbs	10	Georgia Tech
+101       Witzmann       78	OL	28	6' 7"	320 lbs	5	South Dakota State
+102       Lamm       74	OT	26	6' 6"	310 lbs	5	Appalachian State
+104       Harrison       69	OT	25	6' 6"	295 lbs	2	West Georgia
+105       Garrett       95	DE	23	6' 4"	272 lbs	3	Texas A&M
+107       Schobert       53	LB	25	6' 1"	245 lbs	4	Wisconsin
+
+
+Lampkin
+Charles
+Ratley
+Wilson
+Hilliard
+Friend
+Richardson
+Pipkins
+Burris
+Jackson
+Randall
+Taylor
+Stanton
+Ogunjobi
+Brown
+Bright
+Smith
+Higgins
+Bitonio
+Woodson-Luster
+Sankoh
+Harris
+Whitehead
+Landry
+Murray
+Strong
+Carrie
+Beckham
+Njoku
+Seaton
+Gilbert
+Sheehy-Guiseppi
+Coley
+Ekuale
+Avery
+Hines
+Callaway
+Kalis
+Tretter
+Armstrong
+Chubb
+Robinson
+Kush
+Gaines
+Hubbard
+Ward
+Mays
+Mayfield
+DeValve
+Price
+Vernon
+Jones
+Corbett
+Thomas
+Kirksey
+Lawrence
+Mitchell
+Zettel
+Willies
+Burnett
+Witzmann
+Lamm
+Harrison
+Garrett
+Schobert
+
+29 collisions occurred using double hashing
+
+Process finished with exit code 0
+
+
+************************************************************************************************************************
+Existing bug (things not finished)
+
+***I have since updated my code but a major point of confusion was that i was using the hashCode() method myself
+on the key and passing that into bucketPut(), when to get the randomness of the collisons, i needed to use just put()***
+I left the code commented out, I spent hours trying to resolve that simple issue. That way you can follow my logic/debugging
+on how i went about doing the assignment.
+
+(this is now irreverent as stated above)There are no bugs in my program that I am aware of. The only thing that I wasn't sure about was why the hashCode()
+would return a negative value sometimes. I added statement to my findSlot() method to reverse the signs to counter act
+this. as well as having to divide i by the capacity before passing it to the isAvailable() method because
+otherwise my program would give an arrayOut of bounds exception.
+
+The method for reading the file wasn't specified so I refered back to assignment 2 and did some research on how
+to split the input into key vaule pairs
+
+I also changed the default constructor to fit the given table size in the broster text file.
+
+also I wasn't sure if there was anyway to further improve my double-hash hash table to have less collisions.
+The linear probing has table had 44 collisions meanwhile the Double-hashing hash Table had 29. This was about a 34%
+difference so I assumed that was a significant enough difference between the two as discussed in class.
+
+I ran the code again got 74 for linear and 41 for dblhashing. this result more than shows that dblhashing is much better
+the number of collisions vary greatly.

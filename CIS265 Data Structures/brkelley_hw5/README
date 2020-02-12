@@ -1,0 +1,85 @@
+Your name and CSUID
+
+Brandon Kelley 2716916
+
+
+************************************************************************************************************
+Compiling instruction
+
+I first connected to the Linux lab by using BitVise
+upon doing so I then compiled the code using the following commands:
+
+javac IQueue.java
+javac ArrayQueue.java
+javac QueueFullException.java
+javac SinglyLL.java
+javac LLQueue.java
+javac PerformanceComparisonTest.java
+
+after compiling the code I ran the code by running the PerformanceComparisonTest Class
+which contains the main method using this command:
+
+java PerformanceComparisonTest
+
+The resulting output can be seen below
+
+
+************************************************************************************************************
+A sample test run (again in text) ** I am posting the results as  I scale the number of operations up.
+50,000 then 500,000 then 5,000,000 and 50,000,000
+
+50,000 enqueue-dequeue operations were performed on each Queue
+
+Array Queue Time: 0.008 seconds
+Linked List Queue Time: 0.007 seconds
+
+Linked List Queue is 13.3 % faster than Array Queue (0.001 seconds)
+*****
+500,000 enqueue-dequeue operations were performed on each Queue
+
+Array Queue Time: 0.024 seconds
+Linked List Queue Time: 0.032 seconds
+
+Array Queue is 28.6 % faster than Linked List Queue (0.008 seconds)
+****
+5,000,000 enqueue-dequeue operations were performed on each Queue
+
+Array Queue Time: 0.178 seconds
+Linked List Queue Time: 0.162 seconds
+
+Linked List Queue is 9.4 % faster than Array Queue (0.016 seconds)
+****
+50,000,000 enqueue-dequeue operations were performed on each Queue
+
+Array Queue Time: 1.373 seconds
+Linked List Queue Time: 1.42 seconds
+
+Array Queue is 3.4 % faster than Linked List Queue (0.047 seconds)
+
+
+************************************************************************************************************
+Performance comparison analysis
+
+as seen above my results were very inconsistent , which makes sense given that in class we discussed how performing
+a test like this is very unreliable given the fact that the operating system is allocating resources between multiple
+different tasks. I believe this would be the explanation for why my results move back and forth between each type
+of Queue.
+
+I ran the code on my desktop and got similar results. It may be that the difference is so small because I have
+relatively fast hardware for both my desktop and laptop. the magnitude of the difference
+is so small that it seems that it hard to determine which is actually running faster.
+Although it sounds somewhat counter intuitive, if I had access to a slower computer,
+the difference between the two would maybe widen.
+
+out of curiosity, I researched online which one of the Queues should be faster and got the answer that
+for small number of operations that an array based queue should be quicker but as the number of operations
+grow to be a large number, then the Linked List becomes faster.
+
+************************************************************************************************************
+Existing bug (things not finished)
+
+There are no bugs in my program that I currently know of, the assignment went well due to the fact that we
+were given the implementation in class of each type of queue,interface, and exception. The logic for testing
+was straight forward so no problems there. I made sure for my program to print the percent difference for easy
+comparison between the two and tried to format the result to be easy to read.
+

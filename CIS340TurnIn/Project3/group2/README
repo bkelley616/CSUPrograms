@@ -1,0 +1,166 @@
+
+Names: Brandon Kelley 2716916 & Nicholas Bolyard 2709848
+
+********************************************************************************************************
+Project description:
+
+In project 3 we are required to implement our own ls function that takes two optional flags, -f and -b.
+if argument is given we list the contents of the current directory in the order encountered.
+-f will sort the directory in ascending order and -b will sort the directory in descending order.
+
+********************************************************************************************************
+
+Group member contribution (such as member1: 50%, member2: 50%):
+
+Brandon: 50%, Nicholas: 50%
+
+********************************************************************************************************
+
+Compiling instruction:
+**Note** title of executable file made by "make" command is called "myls"
+
+First we logged into the linux lab via Bitvise SSH.
+Then we navigated to where our program files were located after copying the files over.
+To compile the code manually we used the corresponding command:
+gcc myls.c stringout.c -o main
+
+meanwhile with the included makefile we made, we can just use the "make" command to compile the code
+
+--Note-- for context, this is the makefile we used:
+
+CC=gcc -g -Wall
+CFLAGS=-I.
+DEPS = myls.h stringout.h
+OBJ = myls.o stringout.o
+
+%.o: %.c $(DEPS)
+	$(CC) -c -o $@ $< $(CFLAGS)
+
+myls: $(OBJ)
+		$(CC) -o $@ $^ $(CFLAGS)
+
+.PHONY: clean
+clean:
+	rm -f * .o myls
+
+the following output of the program can be seen below in the next section.
+
+********************************************************************************************************
+
+Sample Test Run (w/ edge cases included)
+
+
+A sample test run (Case: no arguments provided) (as is order)
+
+Output:
+-------------------------------------------------------------------------------------------------------
+.
+..
+myls
+stringout.c
+stringout.h
+myls.o
+makefile
+README
+stringout.o
+myls.c
+myls.h
+
+-------------------------------------------------------------------------------------------------------
+
+A sample test run (Case: only directory provided) (used . for the directory given for consistency)
+
+Output:
+
+-------------------------------------------------------------------------------------------------------
+.
+..
+myls
+stringout.c
+stringout.h
+myls.o
+makefile
+README
+stringout.o
+myls.c
+myls.h
+-------------------------------------------------------------------------------------------------------
+
+A sample test run (Case: only flag provided)
+
+Output:
+-------------------------------------------------------------------------------------------------------
+(-f case) ascending order
+
+.
+..
+README
+makefile
+myls
+myls.c
+myls.h
+myls.o
+stringout.c
+stringout.h
+stringout.o
+-------------------------------------------
+(-b case) descending order
+
+stringout.o
+stringout.h
+stringout.c
+myls.o
+myls.h
+myls.c
+myls
+makefile
+README
+..
+.
+-------------------------------------------------------------------------------------------------------
+
+A sample test run (Case: directory and flag provided) used . for the directory given for consistency
+
+Output:
+-------------------------------------------------------------------------------------------------------
+(-f case) ascending order
+
+.
+..
+README
+makefile
+myls
+myls.c
+myls.h
+myls.o
+stringout.c
+stringout.h
+stringout.o
+-------------------------------------------
+(-b case) descending order
+
+stringout.o
+stringout.h
+stringout.c
+myls.o
+myls.h
+myls.c
+myls
+makefile
+README
+..
+.
+-------------------------------------------------------------------------------------------------------
+
+**Note other errors such as too many arguments or an unrecognized flag are also accounted for but
+not listed here for brevity**
+
+********************************************************************************************************
+
+Existing bugs (things not finished):
+As far as we know, there are no bugs within our program. There may be better ways to implement things or
+manage memory but overall our program meets the requirements of the assignment.
+
+********************************************************************************************************
+
+

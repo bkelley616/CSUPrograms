@@ -1,0 +1,57 @@
+Your name and CSUID
+
+Brandon Kelley 2716916
+
+
+***********************************************************************************************************************
+Compiling instruction
+I first connected to the linux lab using bitvise. Next I ran the following commands to compile the code:
+
+javac PerformanceComparisonTest.java
+javac ALPQueue.java
+javac PQueue.java
+javac AbstractPQueue.java
+javac ArrayList.java
+javac List.java
+javac PQEntry.java
+javac EntryComparator
+javac OutOfRangeException.java
+javac HeapPQueue.java
+
+
+after compiling the code I ran the program using the following command:
+
+java PerformanceComparisonTest
+
+the following output can be seen below
+
+
+***********************************************************************************************************************
+A sample test run (again in text)
+
+ALPQueue:
+insert 5000 entries 3 ms
+remove 5000 entries: 56 ms
+
+HeapPQueue:
+insert 5000 entries 2 ms
+remove 5000 entries: 2 ms
+
+
+***********************************************************************************************************************
+Performance comparison analysis
+
+As discussed in class, HeapPQueue should have much better performance than that of ALPQueue because the run time for
+removing an item is log n vs an unsorted array list having a run time of n. The insert time should be log n for
+HeapPQueue and constant time for ALPQueue. My results indicate that the HeapPQueue was Quicker in remove and about the
+same for insert time which makes sense given the small input size of 5000 I assume.
+It does make sense that both my insert time and removal times for HeapPQueue are about the same because both are log n
+and it does make sense that the removal time for the ALPQueue is much larger than the insertion time.
+
+Overall, I learned that using a heap based Priority Queue is much more efficient than using an Array List based Priority
+Queue for data removal.
+
+***********************************************************************************************************************
+Existing bug (things not finished)
+I do not believe there are any bugs in my code. This project was the most difficult so far due to us having to implement
+heapPQueue on our own. I believe I did it right but I could have errors in my code. Overall I learned a lot.

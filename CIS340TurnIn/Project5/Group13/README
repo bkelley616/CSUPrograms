@@ -1,0 +1,97 @@
+
+Names: Brandon Kelley 2716916 & Quan Nguyen 2729679
+
+MUST SEPARATE PATH WITH COLONS!
+ex:
+path + /bin:/usr/bin
+
+********************************************************************************************************
+Project description:
+
+Project 6 requires us to implement pipes (up to two) and input/output redirection to our existing shell
+
+**NOTE** we completed the extra credit
+
+********************************************************************************************************
+
+Group member contribution (such as member1: 50%, member2: 50%):
+
+Brandon: 50%, Quan: 50%
+
+********************************************************************************************************
+
+Compiling instruction:
+**Note** title of executable file made by "make" command is called "shell"
+
+First we logged into the linux lab via Bitvise SSH.
+Then we navigated to where our program files were located after copying the files over.
+To compile the code manually we used the corresponding command:
+gcc shell.c -o shell
+
+meanwhile with the included makefile we made, we can just use the "make" command to compile the code
+
+--Note-- for context, this is the makefile we used:
+
+CC=gcc -g -Wall
+CFLAGS=-I.
+DEPS =
+OBJ = shell.c
+
+%.o: %.c $(DEPS)
+	$(CC) -c -o $@ $< $(CFLAGS)
+
+shell: $(OBJ)
+		$(CC) -o $@ $^ $(CFLAGS)
+
+.PHONY: clean
+clean:
+	rm -f * .o shell
+
+the following output of the program can be seen below in the next section.
+
+********************************************************************************************************
+
+Sample Test Run of pipes and redirection and extra credit
+
+spirit:~/Music% ./shell
+MYSHELL:~$ path + /bin:/usr/bin
+MYSHELL:~$ path
+/bin:/usr/bin
+MYSHELL:~$ ls
+makefile  README  shell  shell.c
+MYSHELL:~$ ls > out.txt
+MYSHELL:~$ ls
+makefile  out.txt  README  shell  shell.c
+MYSHELL:~$ sort < out.txt
+makefile
+out.txt
+README
+shell
+shell.c
+MYSHELL:~$ ls | sort | wc
+      5       5      38
+MYSHELL:~$ sort < out.txt | wc | wc
+      1       3      24
+MYSHELL:~$ ls
+MYSHELL:~$ makefile  out.txt  README  shell  shell.c
+
+MYSHELL:~$ sort < out.txt | wc | wc > out2.txt
+MYSHELL:~$ ls
+MYSHELL:~$ makefile  out2.txt  out.txt  README  shell  shell.c
+sort < out2.txt
+MYSHELL:~$       1       3      24
+quit
+Exiting Shell...
+spirit:~/Music%
+
+
+
+********************************************************************************************************
+
+Existing bugs (things not finished):
+As far as we know, there are no bugs within our program. There may be better ways to implement things or
+manage memory but overall our program meets the requirements of the assignment.
+
+********************************************************************************************************
+
+

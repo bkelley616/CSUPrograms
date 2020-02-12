@@ -1,0 +1,74 @@
+
+<!-- saved from url=(0067)http://galois.cs.csuohio.edu/teaching/cis340fa19/projects/p5s1.html -->
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" class="gr__galois_cs_csuohio_edu"><head><meta http-equiv="Content-Type" content="text/html; charset=windows-1252"> 
+<title>CIS 340 (Fall 2019) Project 5</title> 
+ 
+<link rel="STYLESHEET" href="./CIS 340 (Fall 2019) Project 5_files/class.css" type="text/css"> 
+</head> 
+<body data-gr-c-s-loaded="true">
+
+<h4>Project5: A Simple Shell (Due at 11:59:59pm on 11/18/2019 (EST))</h4>
+
+<h4 class="new"><a href="http://galois.cs.csuohio.edu/teaching/cis340fa19/projects/p5s1_group.txt">Group Arrangment.</a></h4>
+
+<p>You are asked to implement a simple shell that supports Linux shell commands in addition to the internal commands.  You are expected to use C programming language.  
+Your implementation must work on Linux machine in FH131 lab.  </p>
+
+<h4> Required Modules: </h4>
+<ol>
+<li>(60 points) Your shell should repeatedly display a prompt and allow 
+the user to enter a command to run.  Your shell is supposed to read the input
+from system standard input, parse the line with command and arguments, and execute.
+You must use <tt>fork()</tt> and <tt>exec*()</tt> system calls.
+<ul>
+<li>Your shell should find the internal commands (see part2) first.  If not found, it 
+should search the directories in the shell's
+pathname environment (see part2).</li>
+<li>You are not allowed to use system(), as it invokes the system's /bin/sh shell.
+You cannot use <tt>execlp()</tt> or <tt>execvp()</tt>, because your shell has its own path 
+variable (explained in part2).
+</li><li>By convention, the command arguments are seperated by white spaces.  Please
+describe your customized argument seperation rules in your README document 
+if you have special arrangement (not recommended though).  Your shell does not
+need to handle special characters.</li>
+</ul>
+</li>
+<li>(30 points) Implement the following three additional internal commands (running in the main
+process rather than the child process).
+<ul>
+<li><tt>cd</tt>: is a command, obviously, to change directories.  You are required to use the chdir system call.</li>
+<li><tt>path</tt>: is not only a command to show the current command searching pathnames 
+(if no argument is provided), but also a utility to modify (either add or remove) the 
+command searching pathnames.
+<ul>
+<li><tt>path (without arguments)</tt> displays the pathnames currently set.  e.g., "/bin:/sbin".  Initially, the pathnames are empty (so you have to manually use "path" command to construct your pathnames in the runtime.</li>
+<li><tt>path + /abc/def</tt> appends the pathname "/abc/def" to the "path" variable.  e.g., 
+"/bin:/sbin:/abc/def".</li>
+<li><tt>path - /abc/def</tt> removes the pathname "/abc/def" from the "path" variable.</li>
+</ul>
+</li>
+<li><tt>quit</tt>: is a command to leave the shell.</li>
+</ul>
+</li>
+<li>Your shell gives a meaningful response to an undefined command and wait for the next input. Your program has a clean compile with no warning.  You are not allowed to use "gcc -w" option to supress the warnings.</li>
+<li>
+(10 points) Makefile and README: Provide a Makefile so <tt>make</tt> command would produce the executable.
+You are required to write a README document (TXT only) that
+describes your project design detail and the execution sequence (with the commands).
+In particular, please explicitly state which part, if there is any, does not work and 
+the possible reasons why that module does not work.  For those working modules, please give
+a brief (in short) sample output.
+</li>
+</ol>
+
+<h4>Submission:</h4>
+<ul>
+<li>Create a folder with the name of your assigned group name, e.g., group1.</li>
+<li>Copy all source code files/directories into the created folder.</li>
+<li>Include a group picture file (in JPG format) in your submission folder.</li>
+<li>Make sure you have sshed to grail.eecs.csuohio.edu, and then type:<br> 
+<tt> $ turnin -c cis340w -p p5s1 group1</tt></li>
+</ul>
+
+
+</body></html>

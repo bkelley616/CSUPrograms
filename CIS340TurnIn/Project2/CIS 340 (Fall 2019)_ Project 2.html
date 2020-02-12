@@ -1,0 +1,135 @@
+
+<!-- saved from url=(0067)http://galois.cs.csuohio.edu/teaching/cis340fa19/projects/p2s1.html -->
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" class="gr__galois_cs_csuohio_edu"><head><meta http-equiv="Content-Type" content="text/html; charset=windows-1252"> 
+<title>CIS 340 (Fall 2019): Project 2</title> 
+ 
+<link rel="STYLESHEET" href="./CIS 340 (Fall 2019)_ Project 2_files/class.css" type="text/css"> 
+</head>
+<body data-gr-c-s-loaded="true">
+
+<h3> Project2: due on Sept 23rd, 2019 at 11:59:59pm (EDT).</h3>
+
+<span style="font-weight: bold;"><br>
+I. Overview:</span><br>
+<br>
+<a href="http://galois.cs.csuohio.edu/teaching/cis340fa19/projects/p2s1_group.txt">Group Arrangement</a>.
+In this assignment, you will write a program to:
+<ol>
+<li> Build a doubly linked list given the keyboard inputs or the user provided data file;</li>
+<li> Perform a insertion-sort (in the ascending order of the value) for the above linked list, and print the list out to the screen.  For comparison purpose, please also print the unsorted linked list.
+</li>
+</ol>
+
+<p> Your doubly linked list node data structure is defined as in the following:</p>
+
+<pre><tt>struct mynode {
+	int const value;
+	struct mynode *next;
+	struct mynode *prev;
+};
+</tt></pre><tt>
+
+<p> A pre-prepared data file example is listed at below:</p>
+<pre>30
+20
+50
+70
+10
+0
+</pre>
+Given the file above, your program should build a linked list with 5 nodes.  Note that 0 indicates the end of the data file and 0 should not be included in the linked list.  Given the above 5 data, your unsorted linked list should look like:
+<pre>30&lt;==&gt;20&lt;==&gt;50&lt;==&gt;70&lt;==&gt;10
+</pre>
+
+<br>
+Your program's implementation must include the following features:<br>
+<ul>
+  <li>Your program must be compiled from 3 source files:</li>
+  <ul>
+    <li><code>main.c</code> (Handles input and output, as well as
+top-level program logic.)<br>
+    </li>
+    <li><code>node.h</code> (Declares the data structure and function <code>insertsort</code>, which sorts a given doubly linked list with the ascending order), and <code>printlist</code>, which prints a linked list to the screen.<br>
+    </li>
+    <li><code>node.c</code> (Defines the function <code>insertsort</code> and <code>printlist</code>, as declared in <code>node.h</code>.)</li>
+  </ul>
+  <li>Your <code>node.h</code> file must contain the proper
+preprocessor directives
+to prevent multiple inclusion.&nbsp; <br>
+  </li>
+  <li>The main function must use <code>scanf</code> function call to read the input data from keybord (note that the input redirection can be used to directly read the data from a data file).  The number of data (in the data file) is not pre-determined.</li>
+  <li>The function <code>insertsort</code> must be declared exactly as
+follows.</li>
+  <ul>
+    <li>return value: <code>struct mynode *</code>.</li>
+    <li>argument (only one): <code>struct mynode *</code>, which is the head of the given linked list.</li>
+    <li>Note that you must implement the insertsort() function by yourselves and cannot use any existing implementation from other library. You have to use insertsort algorithm instead of other sorting algorithm.</li>
+  </ul>
+  <li>The function <code>printlist</code> must be declared exactly as follows.</li>
+  <ul>
+    <li>return value: void.</li>
+    <li>argument (only one): <code>struct mynode *</code>, which is the head of the given linked list.</li>
+  </ul>
+</ul>
+
+<br>
+<span style="font-weight: bold;"><br>
+<br>
+II. Grading</span><br>
+
+<br>
+<ul><li><span style="text-decoration: underline;">Minimum Requirements<br>
+    </span></li>
+  <ul>
+    <li>Correctly read the input data provided either from the keyboard (by default) or 
+from a data file (if input redirection is used). The data entered from keyboard should 
+match exactly to the data file (if provided), i.e., no other cutomized commands 
+(not specified in the description) are allowed.</li>
+    <li>Proper declaration and definition of the functions required.</li>
+    <li>Once a node is created, you cannot change its value. Therefore, when you sort the the linked list, you have to move the node around rather than swap nodes' values. Note: the node's value field is declared as int const so you cannot modify the value anyway.</li>
+    <li>Correctly output the linked list (before and after being sorted) to the screen.</li>
+    <li>Correctly perform the insertsort algorithm (but not any other sorting algorithm).</li>
+    <li>The correct execution of your program without any unexpected errors and unnecessary extra debug messages, including the segmentation fault.</li>
+    <li>Your work must be submitted in files with the following names:<br>
+      <code>main.c<br>
+node.h<br>
+node.c</code><br>
+    </li>
+    <li>These files must compile on a department LINUX machine with the
+following command:<br>
+      <code>make</code>.<br>  Therefore a Makefile has to be provided with your submission.</li>
+    <li>A clean compilation without any error and warning message.
+    </li><li>In addition, you must provide a README file (in txt format) to decribe the project.
+    Please see the submission instruction for the requirement.
+    </li>
+  </ul>
+</ul>
+
+<span style="font-weight: bold;">
+<br>
+III. Submission:</span><br>
+
+<ol>
+<li>Each student group submits one copy of the source code.</li>
+<li>Create a folder and name it as your group name, e.g., group1.
+</li><li>Copy all your source code to the above folder (clean your source code folder and remove all binary files).
+</li><li>Compile a README file (in text format only) and provide the following information:
+<ul>
+<li>Project description</li>
+<li>Compiling instruction</li>
+<li>A sample test run</li>
+<li>Existing bugs (things not finished)</li>
+</ul>
+</li>
+<li>Log in grail, go to the parent director of your folder, and run (suppose the folder is "group1")
+<pre>turnin -c cis340w -p p2s1 group1
+</pre>
+If there is no error message, your submission is successful.</li>
+<li>Your most recent submission will always automatically overwrite the previous one.</li>
+
+</ol>
+
+
+
+
+</tt></body></html>

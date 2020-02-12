@@ -1,0 +1,87 @@
+
+<!-- saved from url=(0067)http://galois.cs.csuohio.edu/teaching/cis340fa19/projects/p6s1.html -->
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" class="gr__galois_cs_csuohio_edu"><head><meta http-equiv="Content-Type" content="text/html; charset=windows-1252"> 
+<title>CIS 340 (Fall 2019) Project 6</title> 
+ 
+<link rel="STYLESHEET" href="./CIS 340 (Fall 2019) Project 6_files/class.css" type="text/css"> 
+</head> 
+<body data-gr-c-s-loaded="true">
+
+<h4>Project6: An Improved Shell (Due at 11:59:59pm on 12/05/2019 (EST))</h4>
+
+<h4 class="new"><a href="http://galois.cs.csuohio.edu/teaching/cis340fa19/projects/p5s1_group.txt">Group Arrangment.</a></h4>
+
+<p>Based on the shell program you have developed in project5, you are asked to 
+improve your shell to support several I/O redirection.  You are expected to use C programming language.  
+Your implementation must work on Linux machine in FH131 lab.  </p>
+
+<span style="font-weight: bold;"><br>
+I. Extra Features:</span><br>
+
+<ol>
+<li>(50 points) Support <a href="http://en.wikipedia.org/wiki/Pipeline_%28Unix%29">
+pipeline (|)</a>.  Given the following command,
+<pre>$ MYSHELL: cmd1 arg1 arg2 ... | cmd2 arg1 arg2 ... | cmd3 arg1 agr2 ...</pre>
+the standard output
+of <tt>cmd1</tt> is connected to the standard input of <tt>cmd2</tt>, and the standard output of
+<tt>cmd2</tt> is connected to the standard input of <tt>cmd3</tt>.
+<ul>
+<li>You may want to use <tt>pipe()</tt> system call.</li>
+<li>You may assume at most two pipeline operators (|) in my test command while grading.  Actually,
+it is easy to remove this assumption and your shell should handle unlimited number of "|"s. </li>
+</ul>
+</li>
+
+<li> (20 points) Support Input Redirection. Your shell should support input redirection.  In particular,
+if the following command is entered:
+<pre>$ MYSHELL: cmd1 arg1 arg2 ... &lt; myfile
+</pre>
+The input of process cmd1 will be redirected to a local file named "myfile". 
+</li> 
+
+<li>(20 points) Support Output Redirection. Your shell should support output redirection. 
+In particular, if the following command is entered:
+<pre>$ MYSHELL: cmd1 arg1 arg2 ... &gt; myfile
+</pre>
+The screen output will be redirected to a local file named "myfile". This redirection
+capability should work for all commands in your shell.
+</li>
+<li>Bonus: (10 points) You will earn the bonus points if your shell supports the combination of pipeline, input and output redirection.  For example:
+<pre>$ MYSHELL: cmd1 arg1 arg2 ... &lt; file1 | cmd2 arg1 ... | cmd3 arg1 ... &gt; file2 
+</pre>
+</li>
+<li>
+Note1: the above arguments: arg1, arg2, and etc, are optional.  Your shell should not be restrictive on how many arguments being supported.  
+</li>
+<li>Note2: the above extension only works with non-internal commands, and should not work with
+internal commands: cd, path and quit.
+</li>
+</ol>
+
+<span style="font-weight: bold;"><br>
+II. Documentations:</span><br>
+<ul>
+<li>Provide a Makefile so <tt>make</tt> command would produce the executable.</li>
+<li>
+(10 points) Readme: you are required to write a README document (TXT only) that
+describes your project design detail and the execution sequence (with the commands).
+In particular, please explicitly state which part, if there is any, does not work and 
+the possible reasons why that module does not work.  For those working modules, please give
+a brief (in short) sample output.
+</li>
+</ul>
+
+
+
+<span style="font-weight: bold;"><br>
+III. Submission:</span><br>
+
+<ul>
+<li>Create a folder with the name of your assigned group name, e.g., group1.</li>
+<li>Copy all source code files/directories into the created folder.</li>
+<li>Make sure you have sshed to grail.eecs.csuohio.edu, and then type:<br> 
+<tt> $ turnin -c cis340w -p p6s1 group1</tt></li>
+</ul>
+
+
+</body></html>
